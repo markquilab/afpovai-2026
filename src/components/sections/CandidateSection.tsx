@@ -1,7 +1,16 @@
 import { Download, UserRound } from "lucide-react";
 
 const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
-const resources = ["Election Guidelines", "RA 9904", "Proxy Form", "Certificate of Candidacy"];
+const resources = [
+  { label: "Election Guidelines" },
+  {
+    label: "RA 9904",
+    href: "/RA_9904_Department%20Circular%20No.%202024-018.pdf",
+    filename: "RA_9904_Department_Circular_No_2024-018.pdf",
+  },
+  { label: "Proxy Form" },
+  { label: "Certificate of Candidacy" },
+];
 
 export function CandidateSection() {
   return (
@@ -23,22 +32,35 @@ export function CandidateSection() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            {resources.map((resource) => (
-              <button
-                className="flex items-center gap-2 rounded-[8px] border border-slate-200 bg-slate-100 px-4 py-4 text-sm font-medium text-slate-400 shadow-sm disabled:cursor-not-allowed disabled:opacity-100"
-                type="button"
-                disabled
-                aria-label={`${resource} download is not available`}
-                key={resource}
-              >
-                {resource}
-                <Download
-                  size={18}
-                  className="text-slate-400"
-                  aria-hidden="true"
-                />
-              </button>
-            ))}
+            {resources.map((resource) => {
+              const className = resource.href
+                ? "flex items-center gap-2 rounded-[8px] border border-slate-300 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-500 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
+                : "flex cursor-not-allowed items-center gap-2 rounded-[8px] border border-slate-200 bg-slate-100 px-4 py-4 text-sm font-medium text-slate-400 shadow-sm";
+
+              return resource.href ? (
+                <a
+                  className={className}
+                  href={resource.href}
+                  download={resource.filename}
+                  aria-label={`Download ${resource.label}`}
+                  key={resource.label}
+                >
+                  {resource.label}
+                  <Download size={18} aria-hidden="true" />
+                </a>
+              ) : (
+                <button
+                  className={className}
+                  type="button"
+                  disabled
+                  aria-label={`${resource.label} download will be available when the file is added`}
+                  key={resource.label}
+                >
+                  {resource.label}
+                  <Download size={18} className="text-slate-400" aria-hidden="true" />
+                </button>
+              );
+            })}
           </div>
         </div>
 

@@ -1,82 +1,126 @@
-const activities: { date: string; description: string; current?: boolean }[] = [
+import { useEffect, useState } from "react";
+
+const activities = [
   {
     date: "Nov 3",
+    startDate: "2026-11-03",
+    endDate: "2026-11-03",
     description: "Draft 2026 election guidelines.",
   },
   {
     date: "Nov 4",
+    startDate: "2026-11-04",
+    endDate: "2026-11-04",
     description:
       "Announcement: General announcement of election (fbgroups, posters, gcs).",
   },
   {
     date: "Nov 5",
+    startDate: "2026-11-05",
+    endDate: "2026-11-05",
     description:
       "Posting/distribution of the election guidelines, proxy forms and preliminary list of qualified voters (fbgroups, posters, gcs).",
-    current: true,
   },
   {
     date: "Nov 6",
+    startDate: "2026-11-06",
+    endDate: "2026-11-06",
     description:
       "Filing of petitions for inclusion and/or exclusion of names in the final list of voters.",
   },
   {
     date: "Nov 11",
+    startDate: "2026-11-11",
+    endDate: "2026-11-11",
     description:
       "Filing of comments and/or opposition to the petition for inclusion and/or exclusion of names in the final list of qualified members (until 3PM).",
   },
   {
     date: "Nov 13",
-    description:
-      "Posting of the final list of qualified voters",
+    startDate: "2026-11-13",
+    endDate: "2026-11-13",
+    description: "Posting of the final list of qualified voters",
   },
   {
     date: "Nov 4 - 11",
-    description:
-      "Filing/submission of Certificates of Candidacy",
+    startDate: "2026-11-04",
+    endDate: "2026-11-11",
+    description: "Filing/submission of Certificates of Candidacy",
   },
   {
     date: "Nov 4 - 11",
-    description:
-      "Posting of preliminary list of qualified candidates",
+    startDate: "2026-11-04",
+    endDate: "2026-11-11",
+    description: "Posting of preliminary list of qualified candidates",
   },
   {
     date: "Nov 12 - 14",
+    startDate: "2026-11-12",
+    endDate: "2026-11-14",
     description:
-      "Filing of petitions for disqualification of candidates (untill 3:00 PM)",
+      "Filing of petitions for disqualification of candidates (until 3:00 PM)",
   },
   {
     date: "Nov 15 - 17",
+    startDate: "2026-11-15",
+    endDate: "2026-11-17",
     description:
       "Filing of comments and/or opposition to the petition for disqualification of candidate/s",
   },
   {
     date: "Nov 18",
-    description:
-      "Posting of certified and final list of qualified candidates",
+    startDate: "2026-11-18",
+    endDate: "2026-11-18",
+    description: "Posting of certified and final list of qualified candidates",
   },
   {
     date: "Nov 19 - 28",
-    description:
-      "Distribution of Notice of Election",
+    startDate: "2026-11-19",
+    endDate: "2026-11-28",
+    description: "Distribution of Notice of Election",
   },
   {
     date: "Nov 30 - Dec 3",
-    description:
-      "Campaign Period of the Candidates",
+    startDate: "2026-11-30",
+    endDate: "2026-12-03",
+    description: "Campaign Period of the Candidates",
   },
   {
     date: "Nov 27 - Dec 3",
-    description:
-      "Filing/validation of proxy forms untill 3PM",
+    startDate: "2026-11-27",
+    endDate: "2026-12-03",
+    description: "Filing/validation of proxy forms until 3PM",
   },
   {
     date: "Dec 5",
-    description:
-      "ELECTION Proper",
-  }
-];
+    startDate: "2026-12-05",
+    endDate: "2026-12-05",
+    description: "ELECTION Proper",
+  },
+] as const;
+
+function getTodayInManila() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Manila",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
 
 export function ElectionActivitiesSection() {
+  const [today, setToday] = useState(getTodayInManila);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setToday(getTodayInManila());
+    }, 60_000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="bg-background py-16 md:py-[68px]"
@@ -91,23 +135,29 @@ export function ElectionActivitiesSection() {
           2026 Election Activities
         </h2>
         <div>
-          {activities.map((activity) => (
-            <article
-              className={`flex min-h-[70px] items-center gap-5 border-b border-slate-300 px-2 py-3 last:border-0 md:gap-10 ${activity.current ? "bg-[#f0f4e4]" : ""}`}
-              key={activity.date}
-            >
-              <span
-                className={`flex h-9 w-[100px] shrink-0 items-center justify-center rounded-sm border text-sm font-semibold ${activity.current ? "border-[#8ca90c] bg-[#8ca90c] text-white" : activity.date === "Nov 6" || activity.date === "Nov 11" ? "border-slate-600 bg-slate-600 text-white" : "border-slate-500 text-slate-600"}`}
+          {activities.map((activity) => {
+            const isCurrent = activity.startDate <= today && today <= activity.endDate;
+            const isPast = activity.endDate < today;
+
+            return (
+              <article
+                className={`flex min-h-[70px] items-center gap-5 border-b border-slate-300 px-2 py-3 last:border-0 md:gap-10 ${isCurrent ? "bg-[#f0f4e4]" : ""}`}
+                key={`${activity.startDate}-${activity.description}`}
               >
-                {activity.date}
-              </span>
-              <p
-                className={`text-sm ${activity.current ? "text-base text-[#344915]" : "text-slate-600"}`}
-              >
-                {activity.description}
-              </p>
-            </article>
-          ))}
+                <span
+                  className={`flex h-9 w-[112px] shrink-0 items-center justify-center whitespace-nowrap rounded-sm border text-sm font-semibold ${isCurrent ? "border-[#8ca90c] bg-[#8ca90c] text-white" : isPast ? "border-transparent bg-transparent text-slate-600" : "border-slate-600 bg-slate-600 text-white"}`}
+                  aria-current={isCurrent ? "date" : undefined}
+                >
+                  {activity.date}
+                </span>
+                <p
+                  className={`text-sm ${isCurrent ? "text-base text-[#344915]" : "text-slate-600"}`}
+                >
+                  {activity.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
