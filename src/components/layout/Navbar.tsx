@@ -51,7 +51,7 @@ export function Navbar() {
                 AFPOVAI
               </strong>
               <span className="text-xs text-slate-600">
-                Member announcement
+                AFP OFFICERS VILLAGE ASSOCIATION, INC.
               </span>
             </span>
           </a>

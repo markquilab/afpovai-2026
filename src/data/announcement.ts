@@ -15,7 +15,7 @@ export type Announcement = {
 
 export const featuredAnnouncement: Announcement = {
   id: 'afpovai-2026-board-election',
-  title: 'Notice of AFPOVAI 2026 Board of Directors Election',
+  title: 'AFPOVAI 2026 Board of Directors Election',
   publishedDate: 'November 03, 2026',
   recipient: 'All AFPOVAI Members',
   author: 'Election Committee (ELECOM)',
@@ -26,6 +26,6 @@ export const featuredAnnouncement: Announcement = {
   assemblyHours: '8:00 AM to 4:00 PM',
   votingHours: '9:00 AM to 3:00 PM',
   venue:
-    "Philippine Navy Officer's Clubhouse, Fleet Marine Restaurant Cafe, Bonifacio Naval Station, Taguig City.",
+    "Phase 3 AFPOVAI Multi-purpose Hall",
   purpose: 'Annual General Assembly and Annual Election of the Board of Directors',
 }

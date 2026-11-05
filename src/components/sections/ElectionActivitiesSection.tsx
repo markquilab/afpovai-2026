@@ -1,7 +1,7 @@
 const activities: { date: string; description: string; current?: boolean }[] = [
   {
     date: "Nov 3",
-    description: "Submission and Approval of election guidelines.",
+    description: "Draft 2026 election guidelines.",
   },
   {
     date: "Nov 4",
@@ -24,6 +24,56 @@ const activities: { date: string; description: string; current?: boolean }[] = [
     description:
       "Filing of comments and/or opposition to the petition for inclusion and/or exclusion of names in the final list of qualified members (until 3PM).",
   },
+  {
+    date: "Nov 13",
+    description:
+      "Posting of the final list of qualified voters",
+  },
+  {
+    date: "Nov 4 - 11",
+    description:
+      "Filing/submission of Certificates of Candidacy",
+  },
+  {
+    date: "Nov 4 - 11",
+    description:
+      "Posting of preliminary list of qualified candidates",
+  },
+  {
+    date: "Nov 12 - 14",
+    description:
+      "Filing of petitions for disqualification of candidates (untill 3:00 PM)",
+  },
+  {
+    date: "Nov 15 - 17",
+    description:
+      "Filing of comments and/or opposition to the petition for disqualification of candidate/s",
+  },
+  {
+    date: "Nov 18",
+    description:
+      "Posting of certified and final list of qualified candidates",
+  },
+  {
+    date: "Nov 19 - 28",
+    description:
+      "Distribution of Notice of Election",
+  },
+  {
+    date: "Nov 30 - Dec 3",
+    description:
+      "Campaign Period of the Candidates",
+  },
+  {
+    date: "Nov 27 - Dec 3",
+    description:
+      "Filing/validation of proxy forms untill 3PM",
+  },
+  {
+    date: "Dec 5",
+    description:
+      "ELECTION Proper",
+  }
 ];
 
 export function ElectionActivitiesSection() {

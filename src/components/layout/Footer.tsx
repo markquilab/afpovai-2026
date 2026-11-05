@@ -20,7 +20,7 @@ export function Footer({ publishedDate }: FooterProps) {
           </div>
         </div>
         <p className="ml-[52px] text-xs text-slate-300 md:ml-0">
-          Election Committee (ELECOM) · {publishedDate}
+          ELECOM 2026 · {publishedDate}
         </p>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import { Download, UserRound } from "lucide-react";
 
 const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
-const resources = ["Election Guidelines", "RA 9904", "Proxy Form"];
+const resources = ["Election Guidelines", "RA 9904", "Proxy Form", "Certificate of Candidacy"];
 
 export function CandidateSection() {
   return (
@@ -19,7 +19,7 @@ export function CandidateSection() {
               Meet the Candidates
             </h2>
             <p className="text-sm text-slate-600">
-              A total of eight (8) Directors will be elected in this election.
+              A total of <b>eight (8) Directors</b> will be elected in this election.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
