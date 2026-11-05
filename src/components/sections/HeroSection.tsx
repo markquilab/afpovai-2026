@@ -37,7 +37,7 @@ export function HeroSection({ announcement }: HeroSectionProps) {
     >
       <div className="mx-auto flex min-h-[629px] w-[calc(100%_-_64px)] max-w-[1240px] flex-col items-center px-0 pt-[72px] pb-[70px] max-md:min-h-0 max-md:w-[calc(100%_-_36px)] max-md:pt-[45px] max-md:pb-12">
         <p className="mb-[22px] rounded-sm bg-[#f2f5e8] px-[17px] py-[9px] text-center text-[.88rem] font-semibold text-[#304715] max-md:mb-[18px] max-md:text-[.75rem]">
-          Casting of votes runs {announcement.votingHours}.
+          Casting of votes runs 8:00 AM to 2:00 PM.
         </p>
         <h1 className="m-0 max-w-[1084px] text-center text-[clamp(2.35rem,4vw,3.55rem)] leading-[1.15] font-bold tracking-[-.045em] text-white max-md:text-[clamp(2rem,8vw,3rem)]">
           AFPOVAI <span className="text-[#c4d96b]">2026</span>: Board of
@@ -74,10 +74,10 @@ export function HeroSection({ announcement }: HeroSectionProps) {
                 Casting of votes
               </small>
               <strong className="block text-[20px] leading-[1.2] font-bold text-[#43546e] max-lg:text-base">
-                {announcement.votingHours}
+                8:00 AM to 2:00 PM.
               </strong>
               <p className="mt-[14px] mb-0 text-[12px] leading-[1.4] text-[#435772] max-md:mt-1">
-                Annual General Assembly: {announcement.assemblyHours}.
+                Start of Counting of Votes 2:30 pm.
               </p>
             </div>
           </article>
