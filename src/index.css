@@ -65,37 +65,46 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid #b5ca6c;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
   html {
-    min-width: 320px;
-    scroll-behavior: smooth;
-    scroll-padding-top: 24px;
+    scroll-behavior: auto;
   }
 
-  body {
-    min-width: 320px;
-    min-height: 100vh;
-    margin: 0;
-    background: var(--background);
-    color: var(--foreground);
-  }
-
-  a {
-    color: inherit;
-  }
-
-  button,
-  a {
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  :focus-visible {
-    outline: 3px solid #b5ca6c;
-    outline-offset: 4px;
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }
