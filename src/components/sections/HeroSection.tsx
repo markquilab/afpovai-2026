@@ -7,7 +7,12 @@ const electionDay = new Date("2026-12-05T08:00:00+08:00").getTime();
 type HeroSectionProps = { announcement: Announcement };
 
 function useElectionCountdown() {
-  const [countdown, setCountdown] = useState({ days: 0, hours: 0 });
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -15,11 +20,13 @@ function useElectionCountdown() {
       setCountdown({
         days: Math.floor(remaining / 86_400_000),
         hours: Math.floor((remaining % 86_400_000) / 3_600_000),
+        minutes: Math.floor((remaining % 3_600_000) / 60_000),
+        seconds: Math.floor((remaining % 60_000) / 1_000),
       });
     };
 
     updateCountdown();
-    const timer = window.setInterval(updateCountdown, 60_000);
+    const timer = window.setInterval(updateCountdown, 1_000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -74,7 +81,7 @@ export function HeroSection({ announcement }: HeroSectionProps) {
                 Casting of votes
               </small>
               <strong className="block text-[20px] leading-[1.2] font-bold text-[#43546e] max-lg:text-base">
-                8:00 AM to 2:00 PM.
+                8:00 AM to 2:00 PM
               </strong>
               <p className="mt-[14px] mb-0 text-[12px] leading-[1.4] text-[#435772] max-md:mt-1">
                 Start of Counting of Votes 2:30 pm.
@@ -99,13 +106,13 @@ export function HeroSection({ announcement }: HeroSectionProps) {
 
         <div
           className="mt-[54px] text-center max-md:mt-[34px]"
-          aria-label={`${countdown.days} days and ${countdown.hours} hours until the event`}
+          aria-label={`${countdown.days} days, ${countdown.hours} hours, ${countdown.minutes} minutes, and ${countdown.seconds} seconds until the event`}
         >
           <p className="mb-4 text-[.95rem] text-[#e1e8f0]">
             The Countdown Is On!
           </p>
-          <div className="flex justify-center gap-4">
-            <div className="flex size-[120px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
+          <div className="grid grid-cols-4 justify-items-center gap-4 max-md:grid-cols-2">
+            <div className="flex size-[164px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
               <strong className="text-[2.7rem] leading-none font-semibold text-[#c5d96d] max-md:text-[2.35rem]">
                 {countdown.days}
               </strong>
@@ -113,12 +120,28 @@ export function HeroSection({ announcement }: HeroSectionProps) {
                 Days
               </span>
             </div>
-            <div className="flex size-[120px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
+            <div className="flex size-[164px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
               <strong className="text-[2.7rem] leading-none font-semibold text-[#c5d96d] max-md:text-[2.35rem]">
                 {countdown.hours}
               </strong>
               <span className="mt-[5px] text-[.62rem] text-[#f0f3f7] uppercase">
                 Hours
+              </span>
+            </div>
+            <div className="flex size-[164px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
+              <strong className="text-[2.7rem] leading-none font-semibold text-[#c5d96d] max-md:text-[2.35rem]">
+                {countdown.minutes}
+              </strong>
+              <span className="mt-[5px] text-[.62rem] text-[#f0f3f7] uppercase">
+                Minutes
+              </span>
+            </div>
+            <div className="flex size-[164px] flex-col items-center justify-center rounded-[17px] border-2 border-[#d5dfed] max-md:size-[100px]">
+              <strong className="text-[2.7rem] leading-none font-semibold text-[#c5d96d] max-md:text-[2.35rem]">
+                {countdown.seconds}
+              </strong>
+              <span className="mt-[5px] text-[.62rem] text-[#f0f3f7] uppercase">
+                Seconds
               </span>
             </div>
           </div>

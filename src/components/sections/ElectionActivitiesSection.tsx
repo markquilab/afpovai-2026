@@ -141,11 +141,11 @@ export function ElectionActivitiesSection() {
 
             return (
               <article
-                className={`flex min-h-[70px] items-center gap-5 border-b border-slate-300 px-2 py-3 last:border-0 md:gap-10 ${isCurrent ? "bg-[#f0f4e4]" : ""}`}
+                className={`flex min-h-[70px] items-center gap-5 border-b border-slate-400 px-2 py-3 md:gap-10 ${isCurrent ? "bg-[#f0f4e4]" : ""}`}
                 key={`${activity.startDate}-${activity.description}`}
               >
                 <span
-                  className={`flex h-9 w-[112px] shrink-0 items-center justify-center whitespace-nowrap rounded-sm border text-sm font-semibold ${isCurrent ? "border-[#8ca90c] bg-[#8ca90c] text-white" : isPast ? "border-transparent bg-transparent text-slate-600" : "border-slate-600 bg-slate-600 text-white"}`}
+                  className={`flex h-9 w-[112px] shrink-0 items-center justify-center whitespace-nowrap rounded-md border text-sm font-semibold ${isCurrent ? "border-[#8ca90c] bg-[#8ca90c] text-white" : isPast ? "border-slate-400 bg-transparent text-slate-600" : "border-slate-600 bg-slate-600 text-white"}`}
                   aria-current={isCurrent ? "date" : undefined}
                 >
                   {activity.date}
