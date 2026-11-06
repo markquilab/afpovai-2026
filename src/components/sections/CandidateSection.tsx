@@ -9,7 +9,11 @@ const resources = [
     filename: "RA_9904_Department_Circular_No_2024-018.pdf",
   },
   { label: "Proxy Form" },
-  { label: "Certificate of Candidacy" },
+  {
+    label: "Certificate of Candidacy",
+    href: "/Certificate%20of%20Candidacy.pdf",
+    filename: "Certificate_of_Candidacy.pdf",
+  },
 ];
 
 export function CandidateSection() {
