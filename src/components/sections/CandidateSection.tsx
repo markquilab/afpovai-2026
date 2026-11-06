@@ -93,7 +93,7 @@ export function CandidateSection() {
                   Ballot No. {ballotNumber}
                 </span>
                 <h3 className="font-semibold text-slate-800">Juan Dela Cruz</h3>
-                <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p>
+                <p className="mt-1 text-sm text-slate-600">AKA: Juan</p>
               </div>
             </article>
           ))}
