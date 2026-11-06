@@ -2,13 +2,21 @@ import { Download, UserRound } from "lucide-react";
 
 const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
 const resources = [
-  { label: "Election Guidelines" },
+  {
+    label: "Election Guidelines",
+    href: "/2026AFPOVAIElectionGuidelinesV1.0.pdf",
+    filename: "Election_Guidelines.pdf",
+  },
   {
     label: "RA 9904",
     href: "/RA_9904_Department%20Circular%20No.%202024-018.pdf",
     filename: "RA_9904_Department_Circular_No_2024-018.pdf",
   },
-  { label: "Proxy Form" },
+  {
+    label: "Proxy Form",
+    href: "/Proxy%20Form.pdf",
+    filename: "Proxy_Form.pdf",
+  },
   {
     label: "Certificate of Candidacy",
     href: "/Certificate%20of%20Candidacy.pdf",
