@@ -12,35 +12,29 @@ const activities = [
     startDate: "2026-11-04",
     endDate: "2026-11-04",
     description:
-      "Announcement: General announcement of election (fbgroups, posters, gcs).",
+      "Announcement: General announcement of election (posters, gcs).",
   },
   {
     date: "Nov 5",
     startDate: "2026-11-05",
     endDate: "2026-11-05",
     description:
-      "Posting/distribution of the election guidelines, proxy forms and preliminary list of qualified voters (fbgroups, posters, gcs).",
+      "Posting/distribution of the election guidelines, proxy forms and preliminary list of qualified voters (posters, gcs).",
   },
   {
-    date: "Nov 6",
+    date: "Nov 6 - 10",
     startDate: "2026-11-06",
-    endDate: "2026-11-06",
+    endDate: "2026-11-10",
     description:
       "Filing of petitions for inclusion and/or exclusion of names in the final list of voters.",
   },
   {
-    date: "Nov 11",
-    startDate: "2026-11-11",
+    date: "Nov 9 - 11",
+    startDate: "2026-11-09",
     endDate: "2026-11-11",
     description:
-      "Filing of comments and/or opposition to the petition for inclusion and/or exclusion of names in the final list of qualified members (until 3PM).",
-  },
-  {
-    date: "Nov 13",
-    startDate: "2026-11-13",
-    endDate: "2026-11-13",
-    description: "Posting of the final list of qualified voters",
-  },
+      "Filing of comments and/or opposition to the petition for inclusion and/or exclusion of names in the final list of qualified voters (until 3PM).",
+  },  
   {
     date: "Nov 4 - 11",
     startDate: "2026-11-04",
@@ -71,7 +65,7 @@ const activities = [
     date: "Nov 18",
     startDate: "2026-11-18",
     endDate: "2026-11-18",
-    description: "Posting of certified and final list of qualified candidates",
+    description: "Posting of certified and final list of qualified voters/candidates",
   },
   {
     date: "Nov 19 - 28",
