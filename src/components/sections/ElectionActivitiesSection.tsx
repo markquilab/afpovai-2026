@@ -36,9 +36,9 @@ const activities = [
       "Filing of comments and/or opposition to the petition for inclusion and/or exclusion of names in the final list of qualified voters (until 3PM).",
   },  
   {
-    date: "Nov 4 - 11",
+    date: "Nov 4 - 12",
     startDate: "2026-11-04",
-    endDate: "2026-11-11",
+    endDate: "2026-11-12",
     description: "Filing/submission of Certificates of Candidacy",
   },
   {
