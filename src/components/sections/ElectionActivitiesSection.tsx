@@ -42,15 +42,15 @@ const activities = [
     description: "Posting of the final list of qualified voters",
   },
   {
-    date: "Nov 4 - 11",
+    date: "Nov 4 - 12",
     startDate: "2026-11-04",
-    endDate: "2026-11-11",
+    endDate: "2026-11-12",
     description: "Filing/submission of Certificates of Candidacy",
   },
   {
-    date: "Nov 4 - 11",
+    date: "Nov 4 - 12",
     startDate: "2026-11-04",
-    endDate: "2026-11-11",
+    endDate: "2026-11-12",
     description: "Posting of preliminary list of qualified candidates",
   },
   {
