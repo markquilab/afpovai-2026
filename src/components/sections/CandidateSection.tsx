@@ -4,8 +4,8 @@ const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
 const resources = [
   {
     label: "Election Guidelines",
-    href: "/2026AFPOVAIElectionGuidelinesV1.0.pdf",
-    filename: "Election_Guidelines.pdf",
+    href: "/2026AFPOVAIElection_GuidelinesV1.0_signed.pdf",
+    filename: "2026AFPOVAIElection_GuidelinesV1.0_signed.pdf",
   },
   {
     label: "RA 9904",
@@ -14,13 +14,13 @@ const resources = [
   },
   {
     label: "Proxy Form",
-    href: "/Proxy%20Form.pdf",
-    filename: "Proxy_Form.pdf",
+    href: "/2026AFPOVAIElection_ProxyForm.pdf",
+    filename: "2026AFPOVAIElection_ProxyForm.pdf",
   },
   {
     label: "Certificate of Candidacy",
-    href: "/Certificate%20of%20Candidacy.pdf",
-    filename: "Certificate_of_Candidacy.pdf",
+    href: "/2026AFPOVAIElection_CertificateOfCandidacy.pdf",
+    filename: "2026AFPOVAIElection_CertificateOfCandidacy.pdf",
   },
 ];
 
