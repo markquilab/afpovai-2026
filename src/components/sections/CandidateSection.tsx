@@ -1,6 +1,15 @@
 import { Download, UserRound } from "lucide-react";
 
-const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
+const candidates = [
+  "Antonio Suratos",
+  'Roselio Angeles Mendoza "Teng"',
+  "Inocencio G Silbol",
+  "Col Germiniano D Yuson Jr",
+  "Mapagtapat Ongchangco",
+  "Ma. Soledad Borromeo",
+  "Lourdes Ferrer",
+  "Jerichoe Cuison Cadungog",
+];
 const resources = [
   {
     label: "Election Guidelines",
@@ -27,27 +36,17 @@ const resources = [
 export function CandidateSection() {
   return (
     <section
-      className="bg-[#edf2ef] py-16 md:py-[72px]"
-      aria-labelledby="candidates"
+      className="scroll-mt-[48px] bg-[#edf2ef] pb-16 pt-8 md:pb-[72px]"
+      id="candidates"
+      aria-labelledby="candidates-heading"
     >
-      <div className="mx-auto w-[calc(100%_-_30px)] max-w-[1240px]">
-        <div className="mb-7 flex flex-col justify-between gap-4 md:flex-row md:items-center">
-          <div>
-            <h2
-              className="mb-1 scroll-mt-20 text-2xl font-bold tracking-tight text-slate-800 md:text-3xl"
-              id="candidates"
-            >
-              Meet the Candidates
-            </h2>
-            <p className="text-sm text-slate-600">
-              A total of <b>eight (8) Directors</b> will be elected in this election.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
+      <div className="mx-auto w-[calc(100%_-_30px)] max-w-[1306px]">
+        <div className="mb-6 flex flex-col items-center text-center">
+          <div className="mb-8 flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
             {resources.map((resource) => {
               const className = resource.href
-                ? "flex items-center gap-2 rounded-[8px] border border-slate-300 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-500 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
-                : "flex cursor-not-allowed items-center gap-2 rounded-[8px] border border-slate-200 bg-slate-100 px-4 py-4 text-sm font-medium text-slate-400 shadow-sm";
+                ? "flex w-full items-center justify-center gap-2 rounded-[8px] border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-500 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700 sm:w-auto sm:py-4"
+                : "flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-[8px] border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-medium text-slate-400 shadow-sm sm:w-auto sm:py-4";
 
               return resource.href ? (
                 <a
@@ -74,13 +73,22 @@ export function CandidateSection() {
               );
             })}
           </div>
+          <h2
+            className="mb-1 text-[22px] font-bold leading-tight tracking-tight text-slate-800 sm:text-[26px]"
+            id="candidates-heading"
+          >
+            Nominees Received / Preliminary List, Subject to Screening
+          </h2>
+          <p className="text-sm text-slate-600">
+            A total of <b>eight (8) Directors</b> will be elected in this election.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
-          {ballotNumbers.map((ballotNumber) => (
+          {candidates.map((name) => (
             <article
               className="flex min-h-32 items-center gap-4 rounded-md bg-white p-6"
-              key={ballotNumber}
+              key={name}
             >
               <span
                 className="grid size-20 shrink-0 place-items-center rounded-full bg-slate-200 text-slate-500"
@@ -89,11 +97,11 @@ export function CandidateSection() {
                 <UserRound size={31} strokeWidth={1.5} />
               </span>
               <div>
-                <span className="mb-1 inline-block rounded bg-slate-600 px-2 py-1 text-xs font-semibold text-white">
-                  Ballot No. {ballotNumber}
-                </span>
-                <h3 className="font-semibold text-slate-800">Juan Dela Cruz</h3>
-                <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p>
+                {/* <span className="mb-1 inline-block rounded bg-slate-600 px-2 py-1 text-xs font-semibold text-white">
+                  Ballot No. {candidates.indexOf(name) + 1}
+                </span> */}
+                <h3 className="font-semibold text-slate-800">{name}</h3>
+                {/* <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p> */}
               </div>
             </article>
           ))}
