@@ -1,6 +1,15 @@
 import { Download, UserRound } from "lucide-react";
 
-const ballotNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
+const candidates = [
+  "Antonio Suratos",
+  'Roselio Angeles Mendoza "Teng"',
+  "Inocencio G Silbol",
+  "Col Germiniano D Yuson Jr",
+  "Mapagtapat Ongchangco",
+  "Ma. Soledad Borromeo",
+  "Lourdes Ferrer",
+  "Jerichoe Cuison Cadungog",
+];
 const resources = [
   {
     label: "Election Guidelines",
@@ -77,10 +86,10 @@ export function CandidateSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
-          {ballotNumbers.map((ballotNumber) => (
+          {candidates.map((name) => (
             <article
               className="flex min-h-32 items-center gap-4 rounded-md bg-white p-6"
-              key={ballotNumber}
+              key={name}
             >
               <span
                 className="grid size-20 shrink-0 place-items-center rounded-full bg-slate-200 text-slate-500"
@@ -89,11 +98,11 @@ export function CandidateSection() {
                 <UserRound size={31} strokeWidth={1.5} />
               </span>
               <div>
-                <span className="mb-1 inline-block rounded bg-slate-600 px-2 py-1 text-xs font-semibold text-white">
-                  Ballot No. {ballotNumber}
-                </span>
-                <h3 className="font-semibold text-slate-800">Juan Dela Cruz</h3>
-                <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p>
+                {/* <span className="mb-1 inline-block rounded bg-slate-600 px-2 py-1 text-xs font-semibold text-white">
+                  Ballot No. {candidates.indexOf(name) + 1}
+                </span> */}
+                <h3 className="font-semibold text-slate-800">{name}</h3>
+                {/* <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p> */}
               </div>
             </article>
           ))}
