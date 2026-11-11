@@ -2,19 +2,20 @@ import { Download, UserRound } from "lucide-react";
 
 const candidates = [
   "Antonio Suratos",
-  'Roselio Angeles Mendoza "Teng"',
+  'Roselio Mendoza',
   "Inocencio G Silbol",
   "Col Germiniano D Yuson Jr",
   "Mapagtapat Ongchangco",
   "Ma. Soledad Borromeo",
   "Lourdes Ferrer",
   "Jerichoe Cuison Cadungog",
+  "Vic C. Castro",
 ];
 const resources = [
   {
     label: "Election Guidelines",
-    href: "/2026AFPOVAIElection_GuidelinesV1.0_signed.pdf",
-    filename: "2026AFPOVAIElection_GuidelinesV1.0_signed.pdf",
+    href: "/2026AFPOVAIElectionGuidelinesV2.0_final.pdf",
+    filename: "2026AFPOVAIElectionGuidelinesV2.0_final.pdf",
   },
   {
     label: "RA 9904",
