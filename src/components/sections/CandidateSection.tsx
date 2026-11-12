@@ -46,7 +46,7 @@ const candidates: Candidate[] = [
     name: "Lysias Cabusao",
   },
   {
-    name: "Wilson Maraña",
+    name: "Col Wilfredo V. Maraña",
     profile: "/candidates/wilson-marana.png",
   },
   {
