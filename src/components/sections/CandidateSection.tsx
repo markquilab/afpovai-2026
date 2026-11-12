@@ -10,6 +10,16 @@ const candidates = [
   "Lourdes Ferrer",
   "Jerichoe Cuison Cadungog",
   "Vic C. Castro",
+  "Carolyn Denafeliz-Chin",
+  "Charlene Biligan",
+  "Raul Urgello",
+  "Jesus Delfin Dela Cruz",
+  "Lysias Cabusao",
+  "Col Wilfredo Marana",
+  "Ronald Lim",
+  "Marcial Fabula",
+  "Bernardo Fabula",
+  "Col Ricardo D. Dela Paz"
 ];
 const resources = [
   {
