@@ -1,25 +1,69 @@
 import { Download, UserRound } from "lucide-react";
 
-const candidates = [
-  "Antonio Suratos",
-  'Roselio Mendoza',
-  "Inocencio G Silbol",
-  "Col Germiniano D Yuson Jr",
-  "Mapagtapat Ongchangco",
-  "Ma. Soledad Borromeo",
-  "Lourdes Ferrer",
-  "Jerichoe Cuison Cadungog",
-  "Vic C. Castro",
-  "Carolyn Denafeliz-Chin",
-  "Charlene Biligan",
-  "Raul Urgello",
-  "Jesus Delfin Dela Cruz",
-  "Lysias Cabusao",
-  "Col Wilfredo Marana",
-  "Ronald Lim",
-  "Marcial Fabula",
-  "Bernardo Fabula",
-  "Col Ricardo D. Dela Paz"
+type Candidate = {
+  name: string;
+  profile?: string;
+};
+
+const candidates: Candidate[] = [
+  { name: "Antonio Suratos" },
+  { name: "Roselio Mendoza" },
+  {
+    name: "Inocencio Silbol",
+    profile: "/candidates/inocencio-silbol.png",
+  },
+  { name: "Col Germiniano D Yuson Jr" },
+  { name: "Mapagtapat Ongchangco" },
+  {
+    name: "Soledad Borromeo",
+    profile: "/candidates/soledad-borromeo.png",
+  },
+  { name: "Lourdes Ferrer" },
+  {
+    name: "Jerichoe Cadungog",
+    profile: "/candidates/jerichoe-cadungog.png",
+  },
+  {
+    name: "Vic Castro",
+    profile: "/candidates/vic-castro.png",
+  },
+  {
+    name: "Carolyn Chin",
+    profile: "/candidates/carolyn-chin.png",
+  },
+  {
+    name: "Charlene Biligan",
+    profile: "/candidates/charlene-biligan.png",
+  },
+  {
+    name: "Raul Urgello",
+    profile: "/candidates/raul-urgello.png",
+  },
+  {
+    name: "Jesus Delfin Dela Cruz",
+  },
+  {
+    name: "Lysias Cabusao",
+  },
+  {
+    name: "Wilson Maraña",
+    profile: "/candidates/wilson-marana.png",
+  },
+  {
+    name: "Ronald Lim",
+    profile: "/candidates/ronald-lim.png",
+  },
+  {
+    name: "Marcial Fabula",
+    profile: "/candidates/marcial-fabula.png",
+  },
+  {
+    name: "Bernardo Fabula",
+    profile: "/candidates/bernardo-fabula.png",
+  },
+  {
+    name: "Col Ricardo D. Dela Paz",
+  },
 ];
 const resources = [
   {
@@ -79,7 +123,11 @@ export function CandidateSection() {
                   key={resource.label}
                 >
                   {resource.label}
-                  <Download size={18} className="text-slate-400" aria-hidden="true" />
+                  <Download
+                    size={18}
+                    className="text-slate-400"
+                    aria-hidden="true"
+                  />
                 </button>
               );
             })}
@@ -91,28 +139,34 @@ export function CandidateSection() {
             Nominees Received / Preliminary List, Subject to Screening
           </h2>
           <p className="text-sm text-slate-600">
-            A total of <b>eight (8) Directors</b> will be elected in this election.
+            A total of <b>eight (8) Directors</b> will be elected in this
+            election.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
-          {candidates.map((name) => (
+          {candidates.map(({ name, profile }) => (
             <article
-              className="flex min-h-32 items-center gap-4 rounded-md bg-white p-6"
+              className="flex min-h-32 items-center gap-4 rounded-md border border-slate-300 bg-white p-6"
               key={name}
             >
-              <span
-                className="grid size-20 shrink-0 place-items-center rounded-full bg-slate-200 text-slate-500"
-                aria-hidden="true"
-              >
-                <UserRound size={31} strokeWidth={1.5} />
-              </span>
+              {profile ? (
+                <img
+                  className="size-20 shrink-0 rounded-full border-2 border-slate-300 object-cover"
+                  src={profile}
+                  alt={`Profile picture of ${name}`}
+                  loading="lazy"
+                />
+              ) : (
+                <span
+                  className="grid size-20 shrink-0 place-items-center rounded-full border-2 border-slate-300 bg-slate-200 text-slate-500"
+                  aria-hidden="true"
+                >
+                  <UserRound size={31} strokeWidth={1.5} />
+                </span>
+              )}
               <div>
-                {/* <span className="mb-1 inline-block rounded bg-slate-600 px-2 py-1 text-xs font-semibold text-white">
-                  Ballot No. {candidates.indexOf(name) + 1}
-                </span> */}
                 <h3 className="font-semibold text-slate-800">{name}</h3>
-                {/* <p className="mt-1 text-sm text-slate-600">AKA: Juaning</p> */}
               </div>
             </article>
           ))}
