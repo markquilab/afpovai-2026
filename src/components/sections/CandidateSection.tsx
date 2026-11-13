@@ -1,92 +1,9 @@
 import { Download, UserRound } from "lucide-react";
-
-type Candidate = {
-  name: string;
-  profile?: string;
-};
-
-const candidates: Candidate[] = [
-  { name: "Antonio Suratos" },
-  { name: "Roselio Mendoza" },
-  {
-    name: "Inocencio Silbol",
-    profile: "/candidates/inocencio-silbol.png",
-  },
-  { name: "Col Germiniano D Yuson Jr" },
-  { name: "Mapagtapat Ongchangco" },
-  {
-    name: "Soledad Borromeo",
-    profile: "/candidates/soledad-borromeo.png",
-  },
-  { name: "Lourdes Ferrer" },
-  {
-    name: "Jerichoe Cadungog",
-    profile: "/candidates/jerichoe-cadungog.png",
-  },
-  {
-    name: "Vic Castro",
-    profile: "/candidates/vic-castro.png",
-  },
-  {
-    name: "Carolyn Chin",
-    profile: "/candidates/carolyn-chin.png",
-  },
-  {
-    name: "Charlene Biligan",
-    profile: "/candidates/charlene-biligan.png",
-  },
-  {
-    name: "Raul Urgello",
-    profile: "/candidates/raul-urgello.png",
-  },
-  {
-    name: "Jesus Delfin Dela Cruz",
-  },
-  {
-    name: "Lysias Cabusao",
-  },
-  {
-    name: "Col Wilfredo V. Maraña",
-    profile: "/candidates/wilson-marana.png",
-  },
-  {
-    name: "Ronald Lim",
-    profile: "/candidates/ronald-lim.png",
-  },
-  {
-    name: "Marcial Fabula",
-    profile: "/candidates/marcial-fabula.png",
-  },
-  {
-    name: "Bernardo Fabula",
-    profile: "/candidates/bernardo-fabula.png",
-  },
-  {
-    name: "Col Ricardo D. Dela Paz",
-  },
-];
-const resources = [
-  {
-    label: "Election Guidelines",
-    href: "/2026AFPOVAIElectionGuidelinesV2.0_final.pdf",
-    filename: "2026AFPOVAIElectionGuidelinesV2.0_final.pdf",
-  },
-  {
-    label: "RA 9904",
-    href: "/RA_9904_Department%20Circular%20No.%202024-018.pdf",
-    filename: "RA_9904_Department_Circular_No_2024-018.pdf",
-  },
-  {
-    label: "Proxy Form",
-    href: "/2026AFPOVAIElection_ProxyForm.pdf",
-    filename: "2026AFPOVAIElection_ProxyForm.pdf",
-  },
-  {
-    label: "Certificate of Candidacy",
-    href: "/2026AFPOVAIElection_CertificateOfCandidacy.pdf",
-    filename: "2026AFPOVAIElection_CertificateOfCandidacy.pdf",
-  },
-];
+import {
+  candidateResources,
+  candidates,
+  candidateSectionCopy,
+} from "@/data/candidates";
 
 export function CandidateSection() {
   return (
@@ -98,7 +15,7 @@ export function CandidateSection() {
       <div className="mx-auto w-[calc(100%_-_30px)] max-w-[1306px]">
         <div className="mb-6 flex flex-col items-center text-center">
           <div className="mb-8 flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-3">
-            {resources.map((resource) => {
+            {candidateResources.map((resource) => {
               const className = resource.href
                 ? "flex w-full items-center justify-center gap-2 rounded-[8px] border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-slate-500 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700 sm:w-auto sm:py-4"
                 : "flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-[8px] border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-medium text-slate-400 shadow-sm sm:w-auto sm:py-4";
@@ -136,11 +53,11 @@ export function CandidateSection() {
             className="mb-1 text-[22px] font-bold leading-tight tracking-tight text-slate-800 sm:text-[26px]"
             id="candidates-heading"
           >
-            Nominees Received / Preliminary List, Subject to Screening
+            {candidateSectionCopy.heading}
           </h2>
           <p className="text-sm text-slate-600">
-            A total of <b>eight (8) Directors</b> will be elected in this
-            election.
+            {candidateSectionCopy.intro} <b>{candidateSectionCopy.directorCount}</b>{" "}
+            {candidateSectionCopy.suffix}
           </p>
         </div>
 
