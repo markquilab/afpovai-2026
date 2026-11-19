@@ -10,7 +10,7 @@ export type CandidateResource = {
 };
 
 export const candidateSectionCopy = {
-  heading: "Nominees Received / Preliminary List, Subject to Screening",
+  heading: "List of Candidates",
   intro: "A total of",
   directorCount: "eight (8) Directors",
   suffix: "will be elected in this election.",
@@ -18,32 +18,16 @@ export const candidateSectionCopy = {
 
 export const candidates: Candidate[] = [
   {
-    name: "Como Antonio Suratos (Ret)",
-    profile: "/candidates/antonio-suratos.png",
-  },
-  {
-    name: "Mr. Roselio Angeles Mendoza",
-    profile: "/candidates/roselio-mendoza.png",
-  },
-  {
-    name: "Col Inocencio G. Silbol (Ret)",
-    profile: "/candidates/inocencio-silbol.png",
-  },
-  {
-    name: "Col Germiniano D. Yuson, Jr (Ret)",
-    profile: "/candidates/germiniano-yuson.png",
-  },
-  {
-    name: "Col Mapagtapat Ongchangco (Ret)",
-    profile: "/candidates/mapagtapat-ongchangco.png",
+    name: "Mrs. Charlene L. Biligan",
+    profile: "/candidates/charlene-biligan.png",
   },
   {
     name: "Mrs. Soledad Borromeo",
     profile: "/candidates/soledad-borromeo.png",
   },
   {
-    name: "Dr. Lourdes Ferrer",
-    profile: "/candidates/lourdes-ferrer.png",
+    name: "BGen Lysias C. Cabusao (Ret)",
+    profile: "/candidates/lysias-cabusao.png",
   },
   {
     name: "Mr. Jerichoe Cuison Cadungog",
@@ -58,41 +42,49 @@ export const candidates: Candidate[] = [
     profile: "/candidates/carolyn-chin.png",
   },
   {
-    name: "Mrs. Charlene L. Biligan",
-    profile: "/candidates/charlene-biligan.png",
-  },
-  {
-    name: "LtGen Raul Urgello (Ret)",
-    profile: "/candidates/raul-urgello.png",
-  },
-  {
     name: "Col Jesus Delfin G. Dela Cruz (Ret)",
     profile: "/candidates/jesus-dela-cruz.png",
-  },
-  {
-    name: "BGen Lysias C. Cabusao (Ret)",
-    profile: "/candidates/lysias-cabusao.png",
-  },
-  {
-    name: "Col Wilfredo V. Marana (Ret)",
-    profile: "/candidates/wilson-marana.png",
-  },
-  {
-    name: "Mr. Ronald Lim",
-    profile: "/candidates/ronald-lim.png",
-  },
-  {
-    name: "Mr. Marcial F. Fabula",
-    profile: "/candidates/marcial-fabula.png",
   },
   {
     name: "Col Bernardo F. Fabula (Ret)",
     profile: "/candidates/bernardo-fabula.png",
   },
   {
-    name: "Col Ricardo Dela Paz (Ret)",
-    profile: "/candidates/ricardo-dela-paz.png",
+    name: "Mr. Marcial F. Fabula",
+    profile: "/candidates/marcial-fabula.png",
   },
+  {
+    name: "Dr. Lourdes Ferrer",
+    profile: "/candidates/lourdes-ferrer.png",
+  },
+  {
+    name: "Mr. Ronald Lim",
+    profile: "/candidates/ronald-lim.png",
+  },
+  {
+    name: "Col Wilfredo V. Marana (Ret)",
+    profile: "/candidates/wilson-marana.png",
+  },
+  {
+    name: "Mr. Roselio \"Teng\" Mendoza",
+    profile: "/candidates/roselio-mendoza.png",
+  },
+  {
+    name: "Col Mapagtapat Ongchangco (Ret)",
+    profile: "/candidates/mapagtapat-ongchangco.png",
+  },
+  {
+    name: "Col Inocencio G. Silbol (Ret)",
+    profile: "/candidates/inocencio-silbol.png",
+  },
+  {
+    name: "Como Antonio Suratos (Ret)",
+    profile: "/candidates/antonio-suratos.png",
+  },     
+  {
+    name: "LtGen Raul Urgello (Ret)",
+    profile: "/candidates/raul-urgello.png",
+  } 
 ];
 
 export const candidateResources: CandidateResource[] = [
