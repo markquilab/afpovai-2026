@@ -50,7 +50,7 @@ export const candidates: Candidate[] = [
     profile: "/candidates/bernardo-fabula.png",
   },
   {
-    name: "Mr. Marcial F. Fabula",
+    name: "Capt. Marcial F. Fabula",
     profile: "/candidates/marcial-fabula.png",
   },
   {

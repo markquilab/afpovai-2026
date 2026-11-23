@@ -69,14 +69,14 @@ export function CandidateSection() {
             >
               {profile ? (
                 <img
-                  className="size-20 shrink-0 rounded-full border-2 border-slate-300 object-cover"
+                  className="size-25 shrink-0 rounded-full border-2 border-slate-300 object-cover"
                   src={profile}
                   alt={`Profile picture of ${name}`}
                   loading="lazy"
                 />
               ) : (
                 <span
-                  className="grid size-20 shrink-0 place-items-center rounded-full border-2 border-slate-300 bg-slate-200 text-slate-500"
+                  className="grid size-25 shrink-0 place-items-center rounded-full border-2 border-slate-300 bg-slate-200 text-slate-500"
                   aria-hidden="true"
                 >
                   <UserRound size={31} strokeWidth={1.5} />
