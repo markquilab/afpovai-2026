@@ -18,11 +18,11 @@ export const candidateSectionCopy = {
 
 export const candidates: Candidate[] = [
   {
-    name: "Mrs. Charlene L. Biligan",
+    name: "Mrs. Charlene \"Cha\" L. Biligan",
     profile: "/candidates/charlene-biligan.png",
   },
   {
-    name: "Mrs. Soledad Borromeo",
+    name: "Mrs. Soledad \"Girlie\" Borromeo",
     profile: "/candidates/soledad-borromeo.png",
   },
   {
@@ -30,7 +30,7 @@ export const candidates: Candidate[] = [
     profile: "/candidates/lysias-cabusao.png",
   },
   {
-    name: "Mr. Jerichoe Cuison Cadungog",
+    name: "Mr. Jerichoe \"TJ\" Cuison Cadungog",
     profile: "/candidates/jerichoe-cadungog.png",
   },
   {
@@ -50,7 +50,7 @@ export const candidates: Candidate[] = [
     profile: "/candidates/bernardo-fabula.png",
   },
   {
-    name: "Capt. Marcial F. Fabula",
+    name: "Capt. Marcial \"Mar\" F. Fabula",
     profile: "/candidates/marcial-fabula.png",
   },
   {
@@ -58,7 +58,7 @@ export const candidates: Candidate[] = [
     profile: "/candidates/lourdes-ferrer.png",
   },
   {
-    name: "Mr. Ronald Lim",
+    name: "Mr. Ronald \"BuletDeMaluso\" Lim",
     profile: "/candidates/ronald-lim.png",
   },
   {
@@ -70,11 +70,11 @@ export const candidates: Candidate[] = [
     profile: "/candidates/roselio-mendoza.png",
   },
   {
-    name: "Col Mapagtapat Ongchangco (Ret)",
+    name: "Col Mapagtapat R. Ongchangco Jr. (Ret)",
     profile: "/candidates/mapagtapat-ongchangco.png",
   },
   {
-    name: "Col Inocencio G. Silbol (Ret)",
+    name: "Col Inocencio \"Chito\" G. Silbol (Ret)",
     profile: "/candidates/inocencio-silbol.png",
   },
   {
