@@ -38,7 +38,7 @@ export const candidates: Candidate[] = [
     profile: "/candidates/vic-castro.png",
   },
   {
-    name: "Mrs. Carolyn Demafeliz-Chin",
+    name: "Mrs. Carolyn \"Carol\" Demafeliz-Chin",
     profile: "/candidates/carolyn-chin.png",
   },
   {
